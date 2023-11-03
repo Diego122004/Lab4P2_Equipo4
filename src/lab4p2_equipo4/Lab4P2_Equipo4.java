@@ -54,11 +54,10 @@ public class Lab4P2_Equipo4 {
                     for (Equipo equi : e) {
                         System.out.println("Equipo " + (e.indexOf(equi) + 1));
                         System.out.println("Nombre " + equi.nombre);
-                        System.out.println("Deporte " + equi.deporte);
                     }
                 }
                 case 3 -> {
-                    
+                    modificar(e);
                 }
                 case 4 -> {
                 }
@@ -72,6 +71,14 @@ public class Lab4P2_Equipo4 {
         }
     }
 
+    public static void modificar() {
+        boolean seguir=true;
+        while (seguir) {
+            System.out.println("Modificar");
+            System.out.println("1.Nombre");
+        }
+    }
+
     public static Equipo agregar_equipo() {
         int num = 0, opcion = 0;
         do {
@@ -82,11 +89,11 @@ public class Lab4P2_Equipo4 {
             opcion = lea.nextInt();
         } while (num <= 0 || num >= 4);
         if (opcion == 1) {
-            return new Equipo_basquetbol(nombre(), "Basquetbol");
+            return new Equipo_basquetbol(nombre());
         } else if (opcion == 2) {
-            return new Equipo_futbol(nombre(), "Futbol");
+            return new Equipo_futbol(nombre());
         } else {
-            return new Equipo_voleibol(nombre(), "voleboil");
+            return new Equipo_voleibol(nombre());
         }
     }
 

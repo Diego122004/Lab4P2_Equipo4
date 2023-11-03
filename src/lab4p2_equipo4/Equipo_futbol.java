@@ -82,14 +82,6 @@ public class Equipo_futbol extends Equipo {
         this.nombre = nombre;
     }
 
-    public String getDeporte() {
-        return deporte;
-    }
-
-    public void setDeporte(String deporte) {
-        this.deporte = deporte;
-    }
-
     public int getPunto() {
         return punto;
     }
