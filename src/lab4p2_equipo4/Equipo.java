@@ -13,16 +13,13 @@ public class Equipo {
     protected String nombre = "";
     protected String deporte = "";
     protected int punto = 0;
-    protected int partidos_jugados;
+    protected int partidos_jugados=0;
     protected int ganados=0;
     protected int perdidos=0;
 
-    public Equipo(String nombre, String deporte, int punto, int partidos_jugados) {
+    public Equipo(String nombre, String deporte) {
         this.nombre = nombre;
-        this.deporte = deporte;
-        this.punto = punto;
-        this.partidos_jugados = partidos_jugados;
-   
+        this.deporte = deporte;   
     }
 
     public Equipo() {

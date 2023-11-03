@@ -12,8 +12,8 @@ import java.util.ArrayList;
  */
 public class Equipo_voleibol extends Equipo {
 
-    public Equipo_voleibol(String nombre, String deporte, int punto, int partidos_jugados) {
-        super(nombre, deporte, punto, partidos_jugados);
+    public Equipo_voleibol(String nombre, String deporte) {
+        super(nombre, deporte);
     }
     private int puntos;
     private int recibido;
