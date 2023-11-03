@@ -15,9 +15,15 @@ public class TablaDeFutbol extends TablaDePosicion{
     protected ArrayList<Equipo_futbol> tablaDeFut = new ArrayList();
 
     @Override
+    public void ordenar( int equipo1, int equipo2) {
+        
+    }
+
+    @Override
     public void ordenar() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
+    
+    
    
 }

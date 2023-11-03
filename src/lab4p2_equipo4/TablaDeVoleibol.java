@@ -4,10 +4,18 @@
  */
 package lab4p2_equipo4;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author 50432
  */
-public class TablaDeVoleibol {
+public class TablaDeVoleibol extends TablaDePosicion{
     
+    protected ArrayList<Equipo_voleibol> tabladevolei = new ArrayList();
+
+    @Override
+    public void ordenar() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
