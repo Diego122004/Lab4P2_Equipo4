@@ -19,8 +19,8 @@ public class Equipo_futbol extends Equipo {
     private int goles_contra;
     private ArrayList<Jugador> j = new ArrayList();
 
-    public Equipo_futbol(String nombre, String deporte) {
-        super(nombre, deporte);
+    public Equipo_futbol(String nombre) {
+        super(nombre);
     }
 
     public Equipo_futbol() {

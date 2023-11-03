@@ -11,15 +11,13 @@ package lab4p2_equipo4;
 public class Equipo {
 
     protected String nombre = "";
-    protected String deporte = "";
     protected int punto = 0;
-    protected int partidos_jugados=0;
-    protected int ganados=0;
-    protected int perdidos=0;
+    protected int partidos_jugados = 0;
+    protected int ganados = 0;
+    protected int perdidos = 0;
 
-    public Equipo(String nombre, String deporte) {
+    public Equipo(String nombre) {
         this.nombre = nombre;
-        this.deporte = deporte;   
     }
 
     public Equipo() {
@@ -31,14 +29,6 @@ public class Equipo {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public String getDeporte() {
-        return deporte;
-    }
-
-    public void setDeporte(String deporte) {
-        this.deporte = deporte;
     }
 
     public int getPunto() {
@@ -71,6 +61,11 @@ public class Equipo {
 
     public void setPerdidos(int perdidos) {
         this.perdidos = perdidos;
+    }
+
+    @Override
+    public String toString() {
+        return "Equipo{" + "nombre=" + nombre + ", deporte=" + deporte + '}';
     }
 
 }

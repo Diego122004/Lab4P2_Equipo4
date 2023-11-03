@@ -15,8 +15,8 @@ public class Equipo_basquetbol extends Equipo {
     private int puntos;
     private ArrayList<Jugador> j = new ArrayList();
 
-    public Equipo_basquetbol(String nombre, String deporte) {
-        super(nombre, deporte);
+    public Equipo_basquetbol(String nombre) {
+        super(nombre);
     }
 
     public int getPuntos() {

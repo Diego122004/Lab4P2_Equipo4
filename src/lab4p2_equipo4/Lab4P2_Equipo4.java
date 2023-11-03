@@ -19,7 +19,7 @@ public class Lab4P2_Equipo4 {
             int opcion = lea.nextInt();
             switch (opcion) {
                 case 1 -> {
-
+                    crud_equipos(e);
                 }
                 case 2 -> {
                 }
@@ -37,7 +37,7 @@ public class Lab4P2_Equipo4 {
         }
     }
 
-    public static void crud_equipos(ArrayList<Equipo>e) {
+    public static void crud_equipos(ArrayList<Equipo> e) {
         boolean seguir = true;
         while (seguir) {
             System.out.println("1.Agregar equipo");
@@ -51,8 +51,14 @@ public class Lab4P2_Equipo4 {
                     e.add(agregar_equipo());
                 }
                 case 2 -> {
+                    for (Equipo equi : e) {
+                        System.out.println("Equipo " + (e.indexOf(equi) + 1));
+                        System.out.println("Nombre " + equi.nombre);
+                        System.out.println("Deporte " + equi.deporte);
+                    }
                 }
                 case 3 -> {
+                    
                 }
                 case 4 -> {
                 }
@@ -76,21 +82,12 @@ public class Lab4P2_Equipo4 {
             opcion = lea.nextInt();
         } while (num <= 0 || num >= 4);
         if (opcion == 1) {
-            return new Equipo_basquetbol(nombre(), deporte());
+            return new Equipo_basquetbol(nombre(), "Basquetbol");
         } else if (opcion == 2) {
-            return new Equipo_futbol(nombre(), deporte());
+            return new Equipo_futbol(nombre(), "Futbol");
         } else {
-            return new Equipo_voleibol(nombre(), deporte());
+            return new Equipo_voleibol(nombre(), "voleboil");
         }
-    }
-
-    public static String deporte() {
-        String deporte = "";
-        do {
-            System.out.println("Ingrese el nombre del deporte");
-            deporte = lea.next();
-        } while (deporte.length() == 0);
-        return deporte;
     }
 
     public static String nombre() {
