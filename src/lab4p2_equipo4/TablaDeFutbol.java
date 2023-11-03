@@ -5,25 +5,24 @@
 package lab4p2_equipo4;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
  * @author 50432
  */
-public class TablaDeFutbol extends TablaDePosicion{
-    
+public class TablaDeFutbol extends TablaDePosicion {
+
     protected ArrayList<Equipo_futbol> tablaDeFut = new ArrayList();
 
     @Override
-    public void ordenar( int equipo1, int equipo2) {
+    public void ordenar() {
+        ArrayList<Integer> num = new ArrayList();
+        for (int i = 0; i < tablaDeFut.size(); i++) {
+            num.add(tablaDeFut.get(i).getPunto());
+        }
+        Collections.sort(num);
         
     }
 
-    @Override
-    public void ordenar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    
-   
 }

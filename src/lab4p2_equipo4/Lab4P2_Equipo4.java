@@ -6,9 +6,11 @@ import java.util.Scanner;
 public class Lab4P2_Equipo4 {
 
     public static Scanner lea = new Scanner(System.in);
+    public static TablaDeFutbol f;
+    public static TablaDeVoleibol v;
+    public static TablaDeBasquetbol b;
 
     public static void main(String[] args) {
-        ArrayList<Equipo> e = new ArrayList();
         boolean seguir = true;
         while (seguir) {
             System.out.println("1.Equipos");
@@ -19,7 +21,7 @@ public class Lab4P2_Equipo4 {
             int opcion = lea.nextInt();
             switch (opcion) {
                 case 1 -> {
-                    crud_equipos(e);
+                    crud_equipos();
                 }
                 case 2 -> {
                 }
@@ -37,7 +39,7 @@ public class Lab4P2_Equipo4 {
         }
     }
 
-    public static void crud_equipos(ArrayList<Equipo> e) {
+    public static void crud_equipos() {
         boolean seguir = true;
         while (seguir) {
             System.out.println("1.Agregar equipo");
@@ -48,16 +50,12 @@ public class Lab4P2_Equipo4 {
             int opcion = lea.nextInt();
             switch (opcion) {
                 case 1 -> {
-                    e.add(agregar_equipo());
+                    agregar_equipo();
                 }
                 case 2 -> {
-                    for (Equipo equi : e) {
-                        System.out.println("Equipo " + (e.indexOf(equi) + 1));
-                        System.out.println("Nombre " + equi.nombre);
-                    }
+
                 }
                 case 3 -> {
-                    modificar(e);
                 }
                 case 4 -> {
                 }
@@ -71,16 +69,34 @@ public class Lab4P2_Equipo4 {
         }
     }
 
+    public static void listar() {
+        System.out.println("Equipo de Basquetbol");
+        for (Equipo_basquetbol eb : b.tablaDeBasquet) {
+            System.out.println("Nombre " + b.tablaDeBasquet.get(b.tablaDeBasquet.indexOf(eb)));
+        }
+        System.out.println();
+        System.out.println("Equipo de Futbol");
+        for (Equipo_futbol ef : f.tablaDeFut) {
+            System.out.println("Nombre " + f.tablaDeFut.get(f.tablaDeFut.indexOf(ef)));
+        }
+        System.out.println();
+        System.out.println("Equipo de Futbol");
+        for (Equipo_voleibol ef : v.tabladevolei) {
+            System.out.println("Nombre " + v.tabladevolei.get(v.tabladevolei.indexOf(ef)));
+        }
+    }
+
     public static void modificar() {
-        boolean seguir=true;
+        boolean seguir = true;
         while (seguir) {
             System.out.println("Modificar");
             System.out.println("1.Nombre");
         }
     }
 
-    public static Equipo agregar_equipo() {
+    public static void agregar_equipo() {
         int num = 0, opcion = 0;
+        Equipo e;
         do {
             System.out.println("tipo de equipo a agregar");
             System.out.println("1.basquetbol");
@@ -89,11 +105,11 @@ public class Lab4P2_Equipo4 {
             opcion = lea.nextInt();
         } while (num <= 0 || num >= 4);
         if (opcion == 1) {
-            return new Equipo_basquetbol(nombre());
+            b.tablaDeBasquet.add(new Equipo_basquetbol(nombre()));
         } else if (opcion == 2) {
-            return new Equipo_futbol(nombre());
+            f.tablaDeFut.add(new Equipo_futbol(nombre()));
         } else {
-            return new Equipo_voleibol(nombre());
+            v.tabladevolei.add(new Equipo_voleibol(nombre()));
         }
     }
 
