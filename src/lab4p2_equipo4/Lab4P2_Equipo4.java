@@ -380,7 +380,7 @@ public class Lab4P2_Equipo4 {
 
     public static void ModificarJugadores() {
         int op = 0;
-        System.out.println("Seleccione el deporte del que quier ver los jugadores");
+        System.out.println("Seleccione el deporte del que quiere modificar a los jugadores");
         do {
             System.out.println("1. Basquetbol");
             System.out.println("2. Futbol");
@@ -398,7 +398,7 @@ public class Lab4P2_Equipo4 {
                                 String nuevoNombre = leas.nextLine();
                                 jugador.setNombre(nuevoNombre);
                                 System.out.println("Nombre del jugador modificado correctamente.");
-                                return; 
+                                return;
                             }
                         }
                     }
@@ -415,7 +415,7 @@ public class Lab4P2_Equipo4 {
                                 String nuevoNombre = leas.nextLine();
                                 jugador.setNombre(nuevoNombre);
                                 System.out.println("Nombre del jugador modificado correctamente.");
-                                return; 
+                                return;
                             }
                         }
                     }
@@ -431,7 +431,7 @@ public class Lab4P2_Equipo4 {
                                 String nuevoNombre = leas.nextLine();
                                 jugador.setNombre(nuevoNombre);
                                 System.out.println("Nombre del jugador modificado correctamente.");
-                                return; 
+                                return;
                             }
                         }
                     }
@@ -440,8 +440,65 @@ public class Lab4P2_Equipo4 {
             }
         } while (op != 4);
     }
-    
-    public static void EliminarJugadores(){
+
+    public static void EliminarJugadores() {
+        int op = 0;
+        System.out.println("Seleccione el deporte del que quiere modificar a los jugadores");
+        do {
+            System.out.println("1. Basquetbol");
+            System.out.println("2. Futbol");
+            System.out.println("3. Voleibol");
+            System.out.println("4. Salir");
+            op = lea.nextInt();
+            switch (op) {
+                case 1: {
+                    System.out.println("Ingrese el nombre del jugador que desea eliminar:");
+                    String nombreJugador = leas.nextLine();
+                    for (Equipo_basquetbol eb : b.tablaDeBasquet) {
+                        for (Jugador jugador : eb.getJ()) {
+                            if (jugador.getNombre().equals(nombreJugador)) {
+                                eb.getJ().remove(jugador);
+                                System.out.println("Jugador eliminado del equipo de Basquetbol.");
+                                return;
+                            }
+                        }
+                    }
+                    break;
+                }
+                case 2: {
+
+                    System.out.println("Ingrese el nombre del jugador que desea eliminar:");
+                    String nombreJugador = leas.nextLine();
+                    for (Equipo_futbol ef : f.tablaDeFut) {
+                        for (Jugador jugador : ef.getJugadores()) {
+                            if (jugador.getNombre().equals(nombreJugador)) {
+                                ef.getJ().remove(jugador);
+                                System.out.println("Jugador eliminado del equipo de Futbol.");
+                                return;
+                            }
+                        }
+                    }
+
+                    break;
+                }
+                case 3: {
+                    System.out.println("Ingrese el nombre del jugador que desea eliminar:");
+                    String nombreJugador = leas.nextLine();
+                    for (Equipo_voleibol ev : v.tabladevolei) {
+                        for (Jugador jugador : ev.getJ()) {
+                            if (jugador.getNombre().equals(nombreJugador)) {
+                                ev.getJ().remove(jugador);
+                                System.out.println("Jugador eliminado del equipo de Voleibol.");
+                                return;
+                            }
+                        }
+                    }
+
+                    break;
+                }
+
+            }
+        }while(op != 4);
     
     }
 }
