@@ -161,7 +161,7 @@ public class Lab4P2_Equipo4 {
                 }
                 case 3 -> {
                 }
-                case 4 -> {  
+                case 4 -> {
                 }
                 case 5 -> {
                     seguir = false;
@@ -242,8 +242,52 @@ public class Lab4P2_Equipo4 {
         }
 
     }
-    public static void Listar(){
-    
-        
+
+    public static void Listar() {
+        int op = 0;
+        System.out.println("Seleccione el deporte del que quier ver los jugadores");
+        do {
+            System.out.println("1. Futbol");
+            System.out.println("2. Basquetbol");
+            System.out.println("3. Voleibol");
+            op = lea.nextInt();
+            switch (op) {
+                case 1: {
+                    for (Equipo_basquetbol eb : b.tablaDeBasquet) {
+                        System.out.println("Nombre del equipo: " + eb.getNombre());
+                        for (Jugador jugador : eb.getJ()) {
+                            System.out.println(jugador.toString());
+                        }
+                        System.out.println();
+
+                    }
+                }
+                break;
+
+                case 2: {
+                    System.out.println("Equipo de Futbol:");
+                    for (Equipo_futbol ef : f.tablaDeFut) {
+                        System.out.println("Nombre del equipo: " + ef.getNombre());
+                        for (Jugador jugador : ef.getJ()) {
+                            System.out.println(jugador.toString());
+                        }
+                        System.out.println();
+                    }
+                    break;
+                }
+                case 3: {
+                    for (Equipo_voleibol ev : v.tabladevolei) {
+                        System.out.println("Nombre del equipo: " + ev.getNombre());
+                        for (Jugador jugador : ev.getJ()) {
+                            System.out.println(jugador.toString());
+                        }
+                        System.out.println();
+                    }
+                    break;
+                }
+
+            }
+
+        } while (op != 4);
     }
 }
