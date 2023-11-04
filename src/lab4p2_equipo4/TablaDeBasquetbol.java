@@ -10,6 +10,6 @@ public class TablaDeBasquetbol extends TablaDePosicion {
 
     @Override
     public void ordenar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+     
     }
 }
