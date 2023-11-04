@@ -17,6 +17,8 @@ public class Equipo_voleibol extends Equipo {
     }
     private int puntos;
     private int recibido;
+    private int sets_ganados=0;
+    private int sets_perdidos=0;
     private ArrayList<Jugador> j = new ArrayList();
 
     public ArrayList<Jugador> getJ() {
@@ -27,6 +29,22 @@ public class Equipo_voleibol extends Equipo {
         if (j.size() < 18) {
             j.add(e);
         }
+    }
+
+    public int getSets_ganados() {
+        return sets_ganados;
+    }
+
+    public void setSets_ganados(int sets_ganados) {
+        this.sets_ganados = sets_ganados;
+    }
+
+    public int getSets_perdidos() {
+        return sets_perdidos;
+    }
+
+    public void setSets_perdidos(int sets_perdidos) {
+        this.sets_perdidos = sets_perdidos;
     }
 
     public int getPuntos() {
