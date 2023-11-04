@@ -14,24 +14,42 @@ public class Lab4P2_Equipo4 {
         boolean seguir = true;
         while (seguir) {
             System.out.println("1.Equipos");
-            System.out.println("2.Jugadores");
-            System.out.println("3.Transferencia de jugadores");
-            System.out.println("4.Registro de partidos");
-            System.out.println("5.Salir");
+            System.out.println("2.Transferencia de jugadores");
+            System.out.println("3.Registro de partidos");
+            System.out.println("4.Salir");
+
             int opcion = lea.nextInt();
             switch (opcion) {
                 case 1 -> {
                     crud_equipos();
                 }
                 case 2 -> {
+                    int op = 0;
+                    do{
+                        System.out.println("1. Agregar jugadores");
+                        System.out.println("2. Trasladar jugadores");
+                        op = lea.nextInt();
+                        switch(op){
+                            
+                            case 1:{
+                                crud_jugadores();
+                                
+                            break;
+                            }
+                            case 2:{
+                            break;
+                            }
+                        
+                        }
+                    }while(op != 3);
+
                 }
                 case 3 -> {
                 }
                 case 4 -> {
-                }
-                case 5 -> {
                     seguir = false;
                 }
+
                 default -> {
                     System.out.println("Error");
                 }
@@ -53,6 +71,7 @@ public class Lab4P2_Equipo4 {
                     agregar_equipo();
                 }
                 case 2 -> {
+                    listar();
 
                 }
                 case 3 -> {
@@ -133,6 +152,7 @@ public class Lab4P2_Equipo4 {
             int opcion = lea.nextInt();
             switch (opcion) {
                 case 1 -> {
+                    
 
                 }
                 case 2 -> {
