@@ -38,6 +38,7 @@ public class Lab4P2_Equipo4 {
                                 break;
                             }
                             case 2: {
+                                Trasladar();
                                 break;
                             }
 
@@ -257,6 +258,7 @@ public class Lab4P2_Equipo4 {
                     ModificarJugadores();
                 }
                 case 4 -> {
+                    EliminarJugadores();
                 }
                 case 5 -> {
                     seguir = false;
@@ -500,5 +502,133 @@ public class Lab4P2_Equipo4 {
             }
         }while(op != 4);
     
+    }
+    public static void Trasladar() {
+        int num = 0;
+        do {
+            System.out.println("1. Futbol");
+            System.out.println("2. Basquetbol");
+            System.out.println("3. Voleibol");
+            num = lea.nextInt();
+        } while (num <= 0 || num >= 4);
+        switch (num) {
+            case 1 -> {
+                for (Equipo_futbol ef : f.tablaDeFut) {
+                    System.out.println("Equipo " + (f.tablaDeFut.indexOf(ef) + 1));
+                    System.out.println("Nombre del equipo: " + ef.getNombre());
+                    for (Jugador jugador : ef.getJ()) {
+                        System.out.println("Jugador " + (f.tablaDeFut.get(f.tablaDeFut.indexOf(ef)).getJ().indexOf(jugador) + 1));
+                        System.out.println(jugador.toString());
+                    }
+                    System.out.println();
+                }
+                System.out.println("Ingrese el numero del equipo");
+                int posicion = lea.nextInt();
+                posicion--;
+                System.out.println("Ingrese el numero del jugador");
+                int posicion1 = lea.nextInt();
+                posicion1--;
+                if (posicion < f.tablaDeFut.size() && posicion >= 0) {
+                    if (posicion1 < f.tablaDeFut.get(posicion).getJ().size() && posicion1 >= 0) {
+                        listar();
+                        System.out.println("El ingrese el numero al equipo que los quiere Transferir");
+                        int nuevo = lea.nextInt();
+                        System.out.println("Ingrese el nuevo salario");
+                        int salario = lea.nextInt();
+                        System.out.println("Ingrese la duracion del contrato");
+                        int duracion = lea.nextInt();
+                        if (nuevo < f.tablaDeFut.size() && nuevo >= 0) {
+                            Jugador j = f.tablaDeFut.get(posicion).getJ().get(posicion1);
+                            f.tablaDeFut.get(posicion).getJ().remove(posicion1);
+                            j.setDuracionDelContrato(duracion);
+                            j.setSueldo(salario);
+                            j.setEquipo(f.tablaDeFut.get(nuevo).getNombre());
+                            f.tablaDeFut.get(posicion).getJ().add(j);
+                        }
+
+                    }
+                }
+            }
+
+            case 2 -> {
+                for (Equipo_basquetbol eb : b.tablaDeBasquet) {
+                    System.out.println("Equipo " + (b.tablaDeBasquet.indexOf(eb) + 1));
+                    System.out.println("Nombre del equipo: " + eb.getNombre());
+                    for (Jugador jugador : eb.getJ()) {
+                        System.out.println("Jugador " + (b.tablaDeBasquet.get(b.tablaDeBasquet.indexOf(eb)).getJ().indexOf(jugador) + 1));
+
+                        System.out.println(jugador.toString());
+                    }
+                    System.out.println();
+                }
+                System.out.println("Ingrese el numero del equipo");
+                int posicion = lea.nextInt();
+                posicion--;
+                System.out.println("Ingrese el numero del jugador");
+                int posicion1 = lea.nextInt();
+                posicion1--;
+                if (posicion < b.tablaDeBasquet.size() && posicion >= 0) {
+                    if (posicion1 < b.tablaDeBasquet.get(posicion).getJ().size() && posicion1 >= 0) {
+                        listar();
+                        System.out.println("El ingrese el numero al equipo que los quiere Transferir");
+                        int nuevo = lea.nextInt();
+                        System.out.println("Ingrese el nuevo salario");
+                        int salario = lea.nextInt();
+                        System.out.println("Ingrese la duracion del contrato");
+                        int duracion = lea.nextInt();
+                        if (nuevo < b.tablaDeBasquet.size() && nuevo >= 0) {
+                            Jugador j = b.tablaDeBasquet.get(posicion).getJ().get(posicion1);
+                            b.tablaDeBasquet.get(posicion).getJ().remove(posicion1);
+                            j.setDuracionDelContrato(duracion);
+                            j.setSueldo(salario);
+                            j.setEquipo(b.tablaDeBasquet.get(nuevo).getNombre());
+                            b.tablaDeBasquet.get(posicion).getJ().add(j);
+                        }
+
+                    }
+                }
+            }
+            case 3 -> {
+                for (Equipo_voleibol ev : v.tabladevolei) {
+                    System.out.println("Equipo " + (v.tabladevolei.indexOf(ev) + 1));
+                    System.out.println("Nombre del equipo: " + ev.getNombre());
+                    for (Jugador jugador : ev.getJ()) {
+                        System.out.println("Jugador " + (v.tabladevolei.get(v.tabladevolei.indexOf(ev)).getJ().indexOf(jugador) + 1));
+                        System.out.println(jugador.toString());
+                    }
+                    System.out.println();
+                }
+                System.out.println("Ingrese el numero del equipo");
+                int posicion = lea.nextInt();
+                posicion--;
+                System.out.println("Ingrese el numero del jugador");
+                int posicion1 = lea.nextInt();
+                posicion1--;
+                if (posicion < v.tabladevolei.size() && posicion >= 0) {
+                    if (posicion1 < v.tabladevolei.get(posicion).getJ().size() && posicion1 >= 0) {
+                        listar();
+                        System.out.println("El ingrese el numero al equipo que los quiere Transferir");
+                        int nuevo = lea.nextInt();
+                        System.out.println("Ingrese el nuevo salario");
+                        int salario = lea.nextInt();
+                        System.out.println("Ingrese la duracion del contrato");
+                        int duracion = lea.nextInt();
+                        if (nuevo < v.tabladevolei.size() && nuevo >= 0) {
+                            Jugador j = v.tabladevolei.get(posicion).getJ().get(posicion1);
+                            v.tabladevolei.get(posicion).getJ().remove(posicion1);
+                            j.setDuracionDelContrato(duracion);
+                            j.setSueldo(salario);
+                            j.setEquipo(v.tabladevolei.get(nuevo).getNombre());
+                            v.tabladevolei.get(posicion).getJ().add(j);
+                        }
+
+                    }
+                }
+            }
+            default -> {
+                System.out.println("Error");
+            }
+        }
+
     }
 }
