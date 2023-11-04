@@ -254,6 +254,7 @@ public class Lab4P2_Equipo4 {
                     Listar();
                 }
                 case 3 -> {
+                    ModificarJugadores();
                 }
                 case 4 -> {
                 }
@@ -375,5 +376,72 @@ public class Lab4P2_Equipo4 {
             }
 
         } while (op != 4);
+    }
+
+    public static void ModificarJugadores() {
+        int op = 0;
+        System.out.println("Seleccione el deporte del que quier ver los jugadores");
+        do {
+            System.out.println("1. Basquetbol");
+            System.out.println("2. Futbol");
+            System.out.println("3. Voleibol");
+            System.out.println("4. Salir");
+            op = lea.nextInt();
+            switch (op) {
+                case 1: {
+                    System.out.println("Ingrese el nombre del jugador que desea modificar:");
+                    String nombreJugador = leas.nextLine();
+                    for (Equipo_basquetbol eb : b.tablaDeBasquet) {
+                        for (Jugador jugador : eb.getJ()) {
+                            if (jugador.getNombre().equals(nombreJugador)) {
+                                System.out.println("Ingrese el nuevo nombre para el jugador:");
+                                String nuevoNombre = leas.nextLine();
+                                jugador.setNombre(nuevoNombre);
+                                System.out.println("Nombre del jugador modificado correctamente.");
+                                return; 
+                            }
+                        }
+                    }
+
+                    break;
+                }
+                case 2: {
+                    System.out.println("Ingrese el nombre del jugador que desea modificar:");
+                    String nombreJugador = leas.nextLine();
+                    for (Equipo_futbol ef : f.tablaDeFut) {
+                        for (Jugador jugador : ef.getJ()) {
+                            if (jugador.getNombre().equals(nombreJugador)) {
+                                System.out.println("Ingrese el nuevo nombre para el jugador:");
+                                String nuevoNombre = leas.nextLine();
+                                jugador.setNombre(nuevoNombre);
+                                System.out.println("Nombre del jugador modificado correctamente.");
+                                return; 
+                            }
+                        }
+                    }
+                    break;
+                }
+                case 3: {
+                    System.out.println("Ingrese el nombre del jugador que desea modificar:");
+                    String nombreJugador = leas.nextLine();
+                    for (Equipo_voleibol ev : v.tabladevolei) {
+                        for (Jugador jugador : ev.getJ()) {
+                            if (jugador.getNombre().equals(nombreJugador)) {
+                                System.out.println("Ingrese el nuevo nombre para el jugador:");
+                                String nuevoNombre = leas.nextLine();
+                                jugador.setNombre(nuevoNombre);
+                                System.out.println("Nombre del jugador modificado correctamente.");
+                                return; 
+                            }
+                        }
+                    }
+                    break;
+                }
+            }
+        } while (op != 4);
+    }
+    
+    public static void EliminarJugadores(){
+    
     }
 }
