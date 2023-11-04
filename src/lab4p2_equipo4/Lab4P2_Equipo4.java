@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Lab4P2_Equipo4 {
 
     public static Scanner lea = new Scanner(System.in);
+    static Scanner leas = new Scanner(System.in);
     public static TablaDeFutbol f;
     public static TablaDeVoleibol v;
     public static TablaDeBasquetbol b;
@@ -25,23 +26,23 @@ public class Lab4P2_Equipo4 {
                 }
                 case 2 -> {
                     int op = 0;
-                    do{
+                    do {
                         System.out.println("1. Agregar jugadores");
                         System.out.println("2. Trasladar jugadores");
                         op = lea.nextInt();
-                        switch(op){
-                            
-                            case 1:{
+                        switch (op) {
+
+                            case 1: {
                                 crud_jugadores();
-                                
-                            break;
+
+                                break;
                             }
-                            case 2:{
-                            break;
+                            case 2: {
+                                break;
                             }
-                        
+
                         }
-                    }while(op != 3);
+                    } while (op != 3);
 
                 }
                 case 3 -> {
@@ -152,7 +153,8 @@ public class Lab4P2_Equipo4 {
             int opcion = lea.nextInt();
             switch (opcion) {
                 case 1 -> {
-                    
+
+                    AgregarJugadores();
 
                 }
                 case 2 -> {
@@ -171,4 +173,77 @@ public class Lab4P2_Equipo4 {
         }
     }
 
+    public static void AgregarJugadores() {
+        int num = 0;
+
+        System.out.println("Ingrese el nombre del jugador");
+        String name = leas.nextLine();
+        System.out.println("Ingrese la edad del jugador");
+        int edad = lea.nextInt();
+        System.out.println("ingrese el sueldo del jugador");
+        double sueldo = lea.nextInt();
+        do {
+            System.out.println("1. fut");
+            System.out.println("2. bask");
+            System.out.println("3. volei");
+            num = lea.nextInt();
+        } while (num <= 0 || num >= 4);
+        System.out.println("Ingrese el equipo del jugador");
+        String equipo = leas.nextLine();
+        System.out.println("Ingreser la diracion del contrato");
+        int DC = lea.nextInt();
+
+        if (num == 1) {
+            Jugador j = new Jugador(name, edad, "Futbol", equipo, sueldo, DC);
+            int temp = -1;
+            for (int i = 0; i < f.tablaDeFut.size(); i++) {
+                if (f.tablaDeFut.get(i).getNombre().equalsIgnoreCase(equipo)) {
+                    temp = i;
+                }
+            }
+            if (temp == -1) {
+                System.out.println("No hay equipo");
+
+            } else {
+                f.tablaDeFut.get(temp).getJ().add(j);
+
+            }
+
+        } else if (num == 2) {
+            Jugador j = new Jugador(name, edad, "Basquetbol", equipo, sueldo, DC);
+            int temp = -1;
+            for (int i = 0; i < b.tablaDeBasquet.size(); i++) {
+                if (b.tablaDeBasquet.get(i).getNombre().equalsIgnoreCase(equipo)) {
+                    temp = i;
+                }
+            }
+            if (temp == -1) {
+                System.out.println("No hay equipo");
+
+            } else {
+                b.tablaDeBasquet.get(temp).getJ().add(j);
+
+            }
+        } else {
+            Jugador j = new Jugador(name, edad, "Voleibol", equipo, sueldo, DC);
+
+            int temp = -1;
+            for (int i = 0; i < v.tabladevolei.size(); i++) {
+                if (v.tabladevolei.get(i).getNombre().equalsIgnoreCase(equipo)) {
+                    temp = i;
+                }
+            }
+            if (temp == -1) {
+                System.out.println("No hay equipo");
+
+            } else {
+                v.tabladevolei.get(temp).getJ().add(j);
+            }
+        }
+
+    }
+    public static void Listar(){
+    
+        
+    }
 }
