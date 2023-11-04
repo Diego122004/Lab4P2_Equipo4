@@ -11,9 +11,6 @@ import java.util.ArrayList;
  * @author Luis Andres Varela
  */
 public class Equipo_futbol extends Equipo {
-
-    private int ganados;
-    private int perdidos;
     private int empate;
     private int goles_favor;
     private int goles_contra;
@@ -24,22 +21,6 @@ public class Equipo_futbol extends Equipo {
     }
 
     public Equipo_futbol() {
-    }
-
-    public int getGanados() {
-        return ganados;
-    }
-
-    public void setGanados(int ganados) {
-        this.ganados = ganados;
-    }
-
-    public int getPerdidos() {
-        return perdidos;
-    }
-
-    public void setPerdidos(int perdidos) {
-        this.perdidos = perdidos;
     }
 
     public int getEmpate() {
@@ -74,29 +55,7 @@ public class Equipo_futbol extends Equipo {
         this.j = j;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getPunto() {
-        return punto;
-    }
-
-    public void setPunto(int punto) {
-        this.punto = punto;
-    }
-
-    public int getPartidos_jugados() {
-        return partidos_jugados;
-    }
-
-    public void setPartidos_jugados(int partidos_jugados) {
-        this.partidos_jugados = partidos_jugados;
-    }
+    
 
     public void agregar(Jugador e) {
         if (j.size() < 22) {

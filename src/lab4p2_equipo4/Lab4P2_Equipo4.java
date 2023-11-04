@@ -139,7 +139,7 @@ public class Lab4P2_Equipo4 {
                 }
                 case 3 -> {
                 }
-                case 4 -> {
+                case 4 -> {  
                 }
                 case 5 -> {
                     seguir = false;
