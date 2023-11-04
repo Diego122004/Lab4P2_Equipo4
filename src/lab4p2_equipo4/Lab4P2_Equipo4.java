@@ -158,6 +158,7 @@ public class Lab4P2_Equipo4 {
 
                 }
                 case 2 -> {
+                    Listar();
                 }
                 case 3 -> {
                 }
@@ -247,9 +248,10 @@ public class Lab4P2_Equipo4 {
         int op = 0;
         System.out.println("Seleccione el deporte del que quier ver los jugadores");
         do {
-            System.out.println("1. Futbol");
-            System.out.println("2. Basquetbol");
+            System.out.println("1. Basquetbol");
+            System.out.println("2. Futbol");
             System.out.println("3. Voleibol");
+            System.out.println("4. Salir");
             op = lea.nextInt();
             switch (op) {
                 case 1: {
