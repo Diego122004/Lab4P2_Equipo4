@@ -73,11 +73,82 @@ public class Lab4P2_Equipo4 {
                 }
                 case 2 -> {
                     listar();
-
                 }
                 case 3 -> {
+                    int num = 0;
+                    do {
+                        System.out.println("Seleccione");
+                        System.out.println("1. Futbol");
+                        System.out.println("2. Basquetbol");
+                        System.out.println("3. Voleibol");
+                        num = lea.nextInt();
+                    } while (num <= 0 || num >= 4);
+                    if (num == 1) {
+                        System.out.println("Equipos de Futbol");
+                        for (Equipo_futbol ef : f.tablaDeFut) {
+                            System.out.println("Equipo " + (b.tablaDeBasquet.indexOf(ef) + 1));
+                            System.out.println("Nombre " + f.tablaDeFut.get(f.tablaDeFut.indexOf(ef)));
+                        }
+                        System.out.println();
+                    } else if (num == 2) {
+                        System.out.println("Equipos de Basquetbol");
+                        for (Equipo_basquetbol eb : b.tablaDeBasquet) {
+                            System.out.println("Equipo " + (b.tablaDeBasquet.indexOf(eb) + 1));
+                            System.out.println("Nombre " + b.tablaDeBasquet.get(b.tablaDeBasquet.indexOf(eb)));
+                        }
+                        System.out.println();
+                    } else if (num == 3) {
+                        System.out.println("Equipos de Voleibol");
+                        for (Equipo_voleibol ev : v.tabladevolei) {
+                            System.out.println("Equipo " + (b.tablaDeBasquet.indexOf(ev) + 1));
+                            System.out.println("Nombre " + v.tabladevolei.get(v.tabladevolei.indexOf(ev)));
+                        }
+                        System.out.println();
+                    }
+                    System.out.println("Ingrese el numero del equipo que sea modificar");
+                    int posicion = lea.nextInt();
+                    modificar(posicion, num);
                 }
                 case 4 -> {
+                    int num = 0;
+                    do {
+                        System.out.println("Seleccione");
+                        System.out.println("1. Futbol");
+                        System.out.println("2. Basquetbol");
+                        System.out.println("3. Voleibol");
+                        num = lea.nextInt();
+                    } while (num <= 0 || num >= 4);
+                    if (num == 1) {
+                        System.out.println("Equipos de Futbol");
+                        for (Equipo_futbol ef : f.tablaDeFut) {
+                            System.out.println("Equipo " + (b.tablaDeBasquet.indexOf(ef) + 1));
+                            System.out.println("Nombre " + f.tablaDeFut.get(f.tablaDeFut.indexOf(ef)));
+                        }
+                        System.out.println();
+                    } else if (num == 2) {
+                        System.out.println("Equipos de Basquetbol");
+                        for (Equipo_basquetbol eb : b.tablaDeBasquet) {
+                            System.out.println("Equipo " + (b.tablaDeBasquet.indexOf(eb) + 1));
+                            System.out.println("Nombre " + b.tablaDeBasquet.get(b.tablaDeBasquet.indexOf(eb)));
+                        }
+                        System.out.println();
+                    } else if (num == 3) {
+                        System.out.println("Equipos de Voleibol");
+                        for (Equipo_voleibol ev : v.tabladevolei) {
+                            System.out.println("Equipo " + (b.tablaDeBasquet.indexOf(ev) + 1));
+                            System.out.println("Nombre " + v.tabladevolei.get(v.tabladevolei.indexOf(ev)));
+                        }
+                        System.out.println();
+                    }
+                    System.out.println("Ingrese el numero del equipo que sea Eliminar");
+                    int posicion = lea.nextInt();
+                    if (num == 1) {
+                        f.tablaDeFut.remove(posicion);
+                    } else if (num == 2) {
+                        b.tablaDeBasquet.remove(posicion);
+                    } else if (num == 3) {
+                        v.tabladevolei.remove(posicion);
+                    }
                 }
                 case 5 -> {
                     seguir = false;
@@ -90,27 +161,51 @@ public class Lab4P2_Equipo4 {
     }
 
     public static void listar() {
-        System.out.println("Equipo de Basquetbol");
+        System.out.println("Equipos de Basquetbol");
         for (Equipo_basquetbol eb : b.tablaDeBasquet) {
+            System.out.println("Equipo " + (b.tablaDeBasquet.indexOf(eb) + 1));
             System.out.println("Nombre " + b.tablaDeBasquet.get(b.tablaDeBasquet.indexOf(eb)));
         }
         System.out.println();
-        System.out.println("Equipo de Futbol");
+        System.out.println("Equipos de Futbol");
         for (Equipo_futbol ef : f.tablaDeFut) {
+            System.out.println("Equipo " + (b.tablaDeBasquet.indexOf(ef) + 1));
             System.out.println("Nombre " + f.tablaDeFut.get(f.tablaDeFut.indexOf(ef)));
         }
         System.out.println();
-        System.out.println("Equipo de Futbol");
-        for (Equipo_voleibol ef : v.tabladevolei) {
-            System.out.println("Nombre " + v.tabladevolei.get(v.tabladevolei.indexOf(ef)));
+        System.out.println("Equipos de Voleibol");
+        for (Equipo_voleibol ev : v.tabladevolei) {
+            System.out.println("Equipo " + (b.tablaDeBasquet.indexOf(ev) + 1));
+            System.out.println("Nombre " + v.tabladevolei.get(v.tabladevolei.indexOf(ev)));
         }
+        System.out.println();
     }
 
-    public static void modificar() {
+    public static void modificar(int posicion, int num) {
         boolean seguir = true;
         while (seguir) {
             System.out.println("Modificar");
             System.out.println("1.Nombre");
+            System.out.println("2.Salir");
+            int opcion = lea.nextInt();
+            switch (opcion) {
+                case 1 -> {
+                    String nombre = nombre();
+                    if (num == 1) {
+                        f.tablaDeFut.get(posicion).setNombre(nombre);
+                    } else if (num == 2) {
+                        b.tablaDeBasquet.get(posicion).setNombre(nombre);
+                    } else if (num == 3) {
+                        v.tabladevolei.get(posicion).setNombre(nombre);
+                    }
+                }
+                case 2 -> {
+                    seguir = false;
+                }
+                default -> {
+                    System.out.println("Error");
+                }
+            }
         }
     }
 
@@ -153,9 +248,7 @@ public class Lab4P2_Equipo4 {
             int opcion = lea.nextInt();
             switch (opcion) {
                 case 1 -> {
-
                     AgregarJugadores();
-
                 }
                 case 2 -> {
                     Listar();
@@ -193,7 +286,6 @@ public class Lab4P2_Equipo4 {
         String equipo = leas.nextLine();
         System.out.println("Ingreser la diracion del contrato");
         int DC = lea.nextInt();
-
         if (num == 1) {
             Jugador j = new Jugador(name, edad, "Futbol", equipo, sueldo, DC);
             int temp = -1;
@@ -204,12 +296,9 @@ public class Lab4P2_Equipo4 {
             }
             if (temp == -1) {
                 System.out.println("No hay equipo");
-
             } else {
                 f.tablaDeFut.get(temp).getJ().add(j);
-
             }
-
         } else if (num == 2) {
             Jugador j = new Jugador(name, edad, "Basquetbol", equipo, sueldo, DC);
             int temp = -1;
@@ -220,10 +309,8 @@ public class Lab4P2_Equipo4 {
             }
             if (temp == -1) {
                 System.out.println("No hay equipo");
-
             } else {
                 b.tablaDeBasquet.get(temp).getJ().add(j);
-
             }
         } else {
             Jugador j = new Jugador(name, edad, "Voleibol", equipo, sueldo, DC);
@@ -236,7 +323,6 @@ public class Lab4P2_Equipo4 {
             }
             if (temp == -1) {
                 System.out.println("No hay equipo");
-
             } else {
                 v.tabladevolei.get(temp).getJ().add(j);
             }
@@ -261,11 +347,9 @@ public class Lab4P2_Equipo4 {
                             System.out.println(jugador.toString());
                         }
                         System.out.println();
-
                     }
                 }
                 break;
-
                 case 2: {
                     System.out.println("Equipo de Futbol:");
                     for (Equipo_futbol ef : f.tablaDeFut) {
